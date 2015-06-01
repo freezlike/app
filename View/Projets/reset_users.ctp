@@ -1,2 +1,0 @@
-<?php $this->layout = false; ?>
-<?php echo $this->Form->input('Projet.users', array('label'=>false,'div'=>false,'placeholder' => __("Affecter Membres"), 'class' => 'form-control form-cascade-control input-small')); ?>
