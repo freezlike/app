@@ -1,0 +1,159 @@
+/*
+*	 Author: Vijay Kumar
+*	 Template: Archon - Flat & Responsive Bootstrap Admin Template
+*	 Version: 1.0
+*	 Bootstrap version: 3.0.0
+*	 Copyright 2013 bootstrapguru
+*	 www: http://bootstrapguru.com
+*	 mail: support@bootstrapguru.com
+*	 You can find our other themes on: https://bootstrapguru.com/themes/
+---------------------------------------------------------------------------------------------- */
+body{
+    height: 768px;
+    width: auto;
+}
+@media screen and (max-width : 1366px){
+    body{
+        height: 768px;
+        width: auto;
+    }
+}
+
+.pers_societe{
+    margin-left: -132px;
+    margin-right: 132px;
+}
+.info-details > h4 {
+    right: 40px;
+    position: relative;  
+}
+.specUser {
+    position: absolute;
+    padding: 5px;
+}
+.specUserContent {
+    left: 30%;
+    position: relative;
+}
+.moreDetails{
+    font-size: 11px;
+    position: absolute;
+    top: 45px;
+    left: 240px;
+}
+.cb {
+    clear: both;
+    margin-top: 12px;
+}
+.affectUser{
+    max-width: 59.1%;
+    margin: 0 auto;
+}
+.suiteUser {
+    clear: both;
+    margin-top: 40px;
+}
+@media (max-width:768px){
+    .moreDetails{
+        left: 258px;
+    }
+    .info-box {
+        height: 85%;
+    }
+}
+#td1{
+    border:1px solid #007C30;
+} 
+
+.footVirement{
+    text-align: right;
+    padding-right: 5px;
+    border-bottom: hidden;
+    border-left: hidden;
+}
+td {
+    padding: 2px;
+}
+.pointed{
+    border-bottom: dotted 2px #007C30;
+}
+
+.margin{
+    margin-bottom: 180px; 
+}
+
+
+/*td{
+    padding: 8px;
+    background: #e8edff; 
+    border-bottom: 1px solid #fff;
+    border-left: none;
+    border-right: none;
+    color: #669;
+    border-top: 1px solid transparent;
+}*/
+
+.typeahead, .tt-query, .tt-hint {
+    border: 2px solid #CCCCCC;
+    border-radius: 8px;
+    font-size: 24px;
+    height: 30px;
+    line-height: 30px;
+    outline: medium none;
+    padding: 8px 12px;
+    width: 396px;
+}
+.typeahead {
+    background-color: #FFFFFF;
+}
+.typeahead:focus {
+    border: 2px solid #0097CF;
+}
+.tt-query {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+    color: #999999;
+}
+.tt-dropdown-menu {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 12px;
+    padding: 8px 0;
+    width: 422px;
+}
+.tt-suggestion {
+    font-size: 24px;
+    line-height: 24px;
+    padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+    background-color: #0097CF;
+    color: #FFFFFF;
+}
+.tt-suggestion p {
+    margin: 0;
+}
+.loading_img {
+    position: absolute; 
+    margin-top: 48px;   
+}
+#title{
+    cursor: pointer;
+}
+.editable{ width: 90%;}
+
+.chartByProject{ 
+    width:30%;
+    height:335px;
+    font-size:11px;
+}
+@media screen and (min-with:1600px){
+    .chartByProject{ 
+    width:35%;
+    height:335px;
+    font-size:11px;
+}
+}
