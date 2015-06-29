@@ -14,7 +14,17 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('edit');
+        //$this->Auth->allow('edit');
+    }
+
+    /**
+     * Update Login Activity
+     */
+    public function UpdateLoginActivity() {
+        $user = $this->Auth->user('full_name');
+        $group = $this->Auth->user('Group.name');
+        $ip = $_SERVER['REMOTE_ADDR'];
+        CakeLog::write('Login_activity', "L'utilisateur $user : $group, s'est connecté via l'ip $ip\n\r", 'info');
     }
 
     /**
@@ -65,6 +75,38 @@ class UsersController extends AppController {
                 throw new NotFoundException(__('Invalid user'));
             }
         }
+    }
+
+    /**
+     * InitDB method For ACL component
+     */
+    public function initDB() {
+        $group = $this->User->Group;
+        // Autorise l'accès à tout pour les admins
+        $group->id = 1;
+        $this->Acl->allow($group, 'controllers');
+
+        // Autorise l'accès aux posts et widgets pour les managers
+        $group->id = 2;
+        $this->Acl->deny($group, 'controllers');
+        $this->Acl->allow($group, 'controllers/Pages/home');
+        $this->Acl->allow($group, 'controllers/Users');
+        $this->Acl->allow($group, 'controllers/Payments');
+        $this->Acl->allow($group, 'controllers/Evenements');
+        $this->Acl->allow($group, 'controllers/Group');
+        // Autorise l'accès aux actions add et edit des posts widgets pour les utilisateurs de ce groupe
+        $group->id = 3;
+        $this->Acl->deny($group, 'controllers');
+        $this->Acl->allow($group, 'controllers/Pages/home');
+        $this->Acl->allow($group, 'controllers/Projets');
+        $this->Acl->allow($group, 'controllers/Evenements');
+        $this->Acl->allow($group, 'controllers/Taches');
+        // Permet aux utilisateurs classiques de se déconnecter
+        $this->Acl->allow($group, 'controllers/users/logout');
+
+        // Nous ajoutons un exit pour éviter d'avoir un message d'erreur affreux "missing views" (manque une vue)
+        echo "ACL Users mis à jour";
+        exit;
     }
 
     /**
@@ -222,9 +264,12 @@ class UsersController extends AppController {
      * login method
      */
     public function login() {
+        $this->set('title_for_layout', __("Login"));
+        $this->ifLogin();
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
                 $this->Session->setFlash(__("Identifcation réussie"), 'alert');
+                $this->UpdateLoginActivity();
                 $this->redirect(array('controller' => 'pages', 'action' => 'home'));
             } else {
                 $this->Session->setFlash(__("Login ou Mot de passe erroné"), 'alert', array('type' => 'error'));

@@ -1,18 +1,18 @@
 
-<?php //  if (!empty($this->request->data)):     ?>
+<?php //  if (!empty($this->request->data)):      ?>
 <?php
 //$Taches = $this->request->data; //debug($Taches); die();
 //$projetUsers = $projuser['User'];
 ?>
-<?php // endif;     ?>
-<?php //debug($tache); die();    ?>
+<?php // endif;      ?>
+<?php //debug($tache); die();     ?>
 <div class="row">
     <?php //debug($projUsers['User']['first_name']); die();   ?>
     <div class="col-mod-12">
         <ul class="breadcrumb">
             <li><a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'home')); ?>"><?php echo __("Dashboard"); ?></a></li>
             <li><a href="<?php echo $this->Html->url(array('controller' => 'taches', 'action' => 'dashboard')); ?>"><?php echo __("Dashboard Projets"); ?></a></li>
-            <li class="active"><?php echo __("Projet: ") . $proj['Projet']['name']; //debug($user['User']['first_name']); die();         ?></li>
+            <li class="active"><?php echo __("Projet: ") . "<b  id='projectName'>".$proj['Projet']['name']."</b>"; //debug($user['User']['first_name']); die();          ?></li>
         </ul>
     </div>
 </div>
@@ -97,8 +97,8 @@
                                         <tbody>
                                             <tr>
                                                 <td><?php echo __("Description "); ?></td>
-                                                <td><input type="text" name="Description" placeholder="Déscription" id="Description" style="width:350px; margin-bottom: 10px;" value='<?php //echo $Taches['description']; //debug($this->request->data); die()      ?>'></td>
-    <!--                                            <td> <?php //echo $this->Form->input('description', array('placeholder' => __("Déscription"), 'style'=>'width:300px' ));      ?></td>-->
+                                                <td><input type="text" name="Description" placeholder="Déscription" id="Description" style="width:350px; margin-bottom: 10px;" value='<?php //echo $Taches['description']; //debug($this->request->data); die()       ?>'></td>
+    <!--                                            <td> <?php //echo $this->Form->input('description', array('placeholder' => __("Déscription"), 'style'=>'width:300px' ));       ?></td>-->
                                             </tr>
                                             <tr>
                                                 <td><?php echo __("Due Date"); ?></td>
@@ -159,31 +159,31 @@
                                     </div>
                                     <form method="post" enctype="multipart/form-data" id="MyUploadForm">
                                         <div class="input-cont">
-										<!--<input class="form-control pull-right" id="bodyAttach" type="file" placeholder="Attachement...">-->
+                                                                                <!--<input class="form-control pull-right" id="bodyAttach" type="file" placeholder="Attachement...">-->
                                             <input class="form-control pull-right" name="data[Attachement][FileInput]" id="FileInput" type="file" />
                                         </div>
-                                        
-                                    <div id="output"></div>
-                                    <div class="btn-cont">
-                                        <span class="arrow">
-                                        </span>
+
+                                        <div id="output"></div>
+                                        <div class="btn-cont">
+                                            <span class="arrow">
+                                            </span>
                                             <i class="fa fa-paperclip icon-white btn blue" id="attachement" style="font-size: 18px;"> </i>
-                                        
+
                                     </form>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
                         </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="panel-footer" style="  position: fixed;  top: 87%;  width: 124.5%;">
-                <button type="button" id="closeModal" class="btn bg-info text-white center-block" data-dismiss="modal"><?php echo __("Fermer"); ?></button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+        <div class="panel-footer" style="  position: fixed;  top: 87%;  width: 124.5%;">
+            <button type="button" id="closeModal" class="btn bg-info text-white center-block" data-dismiss="modal"><?php echo __("Fermer"); ?></button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
 </div>
 <!-- Assign Member -->
 <?php echo $this->Html->script('bootstrap-tour', array('inline' => false)); ?>

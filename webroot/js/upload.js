@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    var url  = appUrl(root) + 'attachements/valid_attachement';
-    //console.log(url);
+    
+    var url  = appUrl(root) + 'attachements/valid_attachement/' + $("#projectName").text();
+    console.log(url);
     var options = {
         url : url,
         target: '#output', // target element(s) to be updated with server response 
@@ -11,6 +12,7 @@ $(document).ready(function () {
     };
 
     $('#attachement').click(function (e) {
+//        console.log($("#projectName").text());
         $('#MyUploadForm').ajaxSubmit(options);
         // always return false to prevent standard browser submit and page navigation 
         return false;
@@ -18,8 +20,9 @@ $(document).ready(function () {
 
 
 //function after succesful file upload (when server response)
-    function afterSuccess()
+    function afterSuccess(response)
     {
+        alert(response);
         $('#submit-btn').show(); //hide submit button
         $('#loading-img').hide(); //hide submit button
         $('#progressbox').delay(1000).fadeOut(); //hide progress bar
@@ -55,6 +58,7 @@ $(document).ready(function () {
                 case 'application/pdf':
                 case 'application/msword':
                 case 'application/vnd.ms-excel':
+                case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
                 case 'video/mp4':
                     break;
                 default:
@@ -78,6 +82,7 @@ $(document).ready(function () {
             //Output error to older unsupported browsers that doesn't support HTML5 File API
             $("#output").html("Please upgrade your browser, because your current browser lacks some new features we need!");
             return false;
+            
         }
     }
 

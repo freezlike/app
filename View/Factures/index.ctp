@@ -24,7 +24,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($factures as $user): //debug($user); die(); ?>
+                            <?php foreach ($factures as $user): debug($user); die(); ?>
                                 <?php if ($user['User']['commerciale_id'] > 0 && $user['User']['full_name'] !== null): ?>
                                     <?php if ($user['User']['user_count'] > 0 && $user['User']['full_name'] !== null): ?>
                                         <tr class="gradeX">
@@ -65,7 +65,7 @@
         <?php endif; ?>
     </div>
 </div>
-<?php echo $this->Html->script('jquery.dataTables.min', array('inline' => false)); ?>
+<?php echo $this->Html->script('jquery.dataTables', array('inline' => false)); ?>
 <?php echo $this->Html->scriptStart(array('inline' => false, 'charset' => 'utf-8')); ?>
 $(document).ready(function(){
 $('#UsersListe').dataTable({

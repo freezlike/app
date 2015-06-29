@@ -20,52 +20,69 @@ class User extends AppModel {
     public $displayField = "full_name";
     public $useTable = 'users';
     //public $useTable = 'users'; // Ce model utilise une table 'users' de la base de données
+    public $actsAs = array('Acl' => array('type' => 'requester'));
+
+    public function parentNode() {
+        if (!$this->id && empty($this->data)) {
+            return null;
+        }
+        if (isset($this->data['User']['group_id'])) {
+            $groupId = $this->data['User']['group_id'];
+        } else {
+            $groupId = $this->field('group_id');
+        }
+        if (!$groupId) {
+            return null;
+        }
+        return array('Group' => array('id' => $groupId));
+    }
+
     protected $_schema = array(
         'id' => array(
             'type' => 'integer',
             'length' => 11
         ),
-        'username'=> array(
+        'username' => array(
             'type' => 'string',
             'length' => 254
         ),
-        'password'=> array(
+        'password' => array(
             'type' => 'string',
             'length' => 254
         ),
-        'matricule'=> array(
+        'matricule' => array(
             'type' => 'string',
             'length' => 254
         ),
-        'cnss'=> array(
+        'cnss' => array(
             'type' => 'string',
             'length' => 60
         ),
-        'cin'=> array(
+        'cin' => array(
             'type' => 'string',
             'length' => 8
         ),
-        'situation_id'=> array(
+        'situation_id' => array(
             'type' => 'integer',
             'length' => 11
         ),
-        'group_id'=> array(
+        'group_id' => array(
             'type' => 'integer',
             'length' => 11
         ),
-        'departement_id'=> array(
+        'departement_id' => array(
             'type' => 'integer',
             'length' => 11
         ),
-        'poste_id'=> array(
+        'poste_id' => array(
             'type' => 'integer',
             'length' => 11
         ),
-        'commerciale_id'=> array(
+        'commerciale_id' => array(
             'type' => 'integer',
             'length' => 11
         ),
-        'first_name'=> array(
+        'first_name' => array(
             'type' => 'string',
             'length' => 254
         ),
@@ -73,44 +90,43 @@ class User extends AppModel {
             'type' => 'string',
             'length' => 254
         ),
-        'born_day'=> array(
+        'born_day' => array(
             'type' => 'date',
-           // 'length' => 11
+        // 'length' => 11
         ),
-        'telephone'=> array(
+        'telephone' => array(
             'type' => 'string',
             'length' => 254
         ),
-        'situation_id'=> array(
+        'situation_id' => array(
             'type' => 'integer',
             'length' => 11
         ),
-        'email'=> array(
+        'email' => array(
             'type' => 'string',
             'length' => 254
         ),
-        'permis'=> array(
+        'permis' => array(
             'type' => 'boolean',
             //'length' => 11
-            'default'=>0
+            'default' => 0
         ),
-        'cv_url'=> array(
+        'cv_url' => array(
             'type' => 'string',
             'length' => 254
         ),
-        'hire_date'=> array(
+        'hire_date' => array(
             'type' => 'date',
-            //'length' => 11
+        //'length' => 11
         ),
-        'rib'=> array(
+        'rib' => array(
             'type' => 'string',
             'length' => 254
         ),
-        'banque'=> array(
+        'banque' => array(
             'type' => 'string',
             'length' => 254
         ),
-        
     );
 
     /**

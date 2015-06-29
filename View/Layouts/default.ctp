@@ -7,18 +7,19 @@
         <!-- Loading Bootstrap -->
         <?php echo $this->Html->css('bootstrap'); ?>
         <?php echo $this->Html->css('print'); ?>
+        <?php echo $this->Html->css('simply-toast.min'); ?>
 
         <!-- Loading Stylesheets -->    
         <?php echo $this->Html->css('font-awesome'); ?>
         <?php echo $this->Html->css('style'); ?>
         <?php echo $this->Html->css('icheck/skins/all'); ?>
+        <?php echo $this->Html->css('jquery-ui'); ?>
         <?php echo $this->Html->css('select2'); ?>
 
         <?php if ($this->params['controller'] !== 'users' && $this->params['action'] !== 'login'): ?>
             <link href="<?php echo $this->Html->url('/less/style.less', true); ?>" rel="stylesheet"  title="lessCss" id="lessCss">
         <?php endif; ?>
         <?php echo $this->Html->css('custom'); ?>
-        <?php echo $this->Html->css('jquery-ui'); ?>
         <?php echo $this->fetch('css'); ?>
         <?php echo $this->Html->meta('icon', 'favicon.ico'); ?>
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -39,31 +40,43 @@
                 <!-- .box-holder -->
                 <div class="box-holder">
                     <?php echo $this->Session->flash(); ?>
-                    <?php echo $this->element('sidebar'); ?>
+                    <?php if ($this->Session->read('Auth.User.Group.name') === 'Admin'): ?>
+                        <?php echo $this->element('sidebar'); ?>
+                    <?php endif; ?>
+
+                    <?php if ($this->Session->read('Auth.User.Group.name') === 'RH'): ?>
+                        <?php echo $this->element('sidebar_rh'); ?>
+                    <?php endif; ?>
+
+                    <?php if ($this->Session->read('Auth.User.Group.name') === 'DSI'): ?>
+                        <?php echo $this->element('sidebar_dsi'); ?>
+                    <?php endif; ?>
                     <div class="content">
                         <?php echo $this->fetch('content'); ?>
-
-                        <!--                        <div class="footer noprint">
-                                                    
-                                                    © 2015 <a href="">largestinfo</a>
-                                                </div>-->
+                        <!--            
+                        <div class="footer noprint">                            
+                            © 2015 <a href="">largestinfo</a>
+                        </div>
+                        -->
                     </div>
                 </div>
             </div>
         <?php endif; ?>
+        <!-- Load JS here for Faster site load =============================-->
+        <?php echo $this->Html->script('jquery-1.11.2.min'); ?>
+        <?php echo $this->Html->script('simply-toast.min'); ?>
+        <?php echo $this->Html->script('jquery-ui.min'); ?>
 
         <?php //echo $this->Html->script('jquery-migrate-1.2.1.min'); ?>
-        <?php echo $this->Html->script('jquery.min'); ?>
-        <?php echo $this->Html->script('jquery-ui.min'); ?>
         <?php echo $this->fetch('script'); ?>
         <?php echo $this->Html->scriptStart(); ?>
         var root = document.location.host;
         function appUrl(url) {
-            if (root === 'localhost' || root === '127.0.0.1') {
-                return 'http://localhost/largestrh/';
-            } else {
-                return 'http://' + root + '/';
-            }
+        if (root === 'localhost' || root === '127.0.0.1') {
+        return 'http://localhost/largestrh/';
+        } else {
+        return 'http://' + root + '/';
+        }
         }
         <?php echo $this->Html->scriptEnd(); ?>
         <?php echo $this->Html->script('bootstrap.min'); ?>

@@ -4,7 +4,11 @@ App::uses('AppController', 'Controller');
 
 class TachesController extends AppController {
 
-    public $uses = array('Tache', 'User', 'TachesUser', 'Projet', 'ProjetsUser','Commentaire');
+    public function beforeFilter() {
+        parent::beforeFilter();
+    }
+
+    public $uses = array('Tache', 'User', 'TachesUser', 'Projet', 'ProjetsUser', 'Commentaire');
 
     public function index() {
         $this->Tache->recursive = 0;
@@ -21,18 +25,19 @@ class TachesController extends AppController {
         }
         $this->set(compact('message'));
     }
-     public function list_commentaire($id = null){
-            $liste = $this->Commentaire->find('first', array(
-                'conditions' => array('tache_id'=>$id)
-            ));
-             $this->set(compact('liste'));
-            //debug($liste); die();
-        }
+
+    public function list_commentaire($id = null) {
+        $liste = $this->Commentaire->find('first', array(
+            'conditions' => array('tache_id' => $id)
+        ));
+        $this->set(compact('liste'));
+        //debug($liste); die();
+    }
 
     public function update_tache($id = null) {
         $message = 'error';
         if ($this->request->is('ajax')) {
-           $this->Tache->id = $id;
+            $this->Tache->id = $id;
             //$this->Tache->saveField('description', $value)
             $data = $this->request->data;
             if ($this->Tache->save($data['Tache'])) {
@@ -79,8 +84,8 @@ class TachesController extends AppController {
         $tache = $this->Tache->find('first', array(
             'conditions' => array('Tache.id' => $id)
         ));
-        debug($tache);
-        die();
+//        debug($tache);
+//        die();
         if ($id !== null) {
             $this->Tache->id = $id;
 
@@ -125,8 +130,8 @@ class TachesController extends AppController {
         $description = $this->Tache->find('all', array(
             'condition' => array('Tache.id' => $id_tache)
         ));
-        debug($description);
-        die();
+//        debug($description);
+//        die();
         $tabDes = array();
         foreach ($description as $t):
             $Desc = $t['Tache'];
@@ -134,27 +139,28 @@ class TachesController extends AppController {
             array_push($tabDes, $Desc['description']);
         endforeach;
 
-        debug($tabDes);
-        die();
+//        debug($tabDes);
+//        die();
     }
-      public function projet_etat($id = null) {
+
+    public function projet_etat($id = null) {
         $tache1 = $this->Tache->find('count', array(
-                'conditions' => array('etat'=> '0','projet_id' => $id)
-                ));
+            'conditions' => array('etat' => '0', 'projet_id' => $id)
+        ));
         $tache2 = $this->Tache->find('count', array(
-                'conditions' => array('etat'=> '1','projet_id' => $id)
-                ));
+            'conditions' => array('etat' => '1', 'projet_id' => $id)
+        ));
         $tache3 = $this->Tache->find('count', array(
-                'conditions' => array('etat'=> '2','projet_id' => $id)
-                ));
+            'conditions' => array('etat' => '2', 'projet_id' => $id)
+        ));
         $tache_projet = $this->Tache->find('count', array(
             'conditions' => array('projet_id' => $id)
         ));
-        $projet = $this->Projet->find('first',array(
+        $projet = $this->Projet->find('first', array(
             'conditions' => array('Projet.id' => $id)
         ));
-        $this->set(compact('tache1','tache2','tache3','tache_projet','projet'));
-	}
+        $this->set(compact('tache1', 'tache2', 'tache3', 'tache_projet', 'projet'));
+    }
 
     public function tasks_nestable($id = null, $name = null) {
         if ($this->request->is(array('post', 'put'))) {
@@ -166,6 +172,7 @@ class TachesController extends AppController {
         $project = $this->Projet->find('first', array(
             'conditions' => array('Projet.id' => $id)
         ));
+        //debug($project); die();
         $tabFullname = array();
         $message = array();
         foreach ($project['User'] as $p):
@@ -173,7 +180,8 @@ class TachesController extends AppController {
         endforeach;
         $users = array();
         foreach ($project['User'] as $user):
-            $users[$user['id']] = $user['first_name'] . " " . $user['last_name'];
+            // debug($user); die();
+            $users[$user['id']] = $user['full_name'];
         endforeach;
         $proj = $this->Projet->find('first', array(
             'conditions' => array('projet.id' => $id)
@@ -211,11 +219,11 @@ class TachesController extends AppController {
             $this->Projet->id = $id;
             $this->request->data['Projet']['etat_p'] = '1';
             $this->Projet->saveField('etat_p', $this->request->data['Projet']['etat_p']);
-        }    
-         $liste = $this->Commentaire->find('first', array(
-                'conditions' => array('tache_id'=> $id)
-            ));
-        $this->set(compact('tchs', 'tchs1', 'tchs2', 'proj', 't', 'users', 'message', 'projUsers', 'Taches','liste'));
+        }
+        $liste = $this->Commentaire->find('first', array(
+            'conditions' => array('tache_id' => $id)
+        ));
+        $this->set(compact('tchs', 'tchs1', 'tchs2', 'proj', 't', 'users', 'message', 'projUsers', 'Taches', 'liste'));
     }
 
     public function delete_t($id = null) {
@@ -269,8 +277,8 @@ class TachesController extends AppController {
             $this->Tache->id = $data['id'];
             $message[0] = $this->Tache->read();
             //$this->TachesUser->recursive = 2;
-            $taches_users = $this->Tache->find('first',array('conditions'=>array('Tache.id'=>$data['id'])));
-            if(!empty($taches_users)){
+            $taches_users = $this->Tache->find('first', array('conditions' => array('Tache.id' => $data['id'])));
+            if (!empty($taches_users)) {
                 $message[1] = $taches_users;
             }
             echo json_encode($message);
@@ -348,6 +356,7 @@ class TachesController extends AppController {
         }
         return $this->redirect(array('action' => 'index'));
     }
+
     public function modif_title_task() {
         $message = 'error';
         if ($this->request->is('ajax')) {
@@ -374,7 +383,7 @@ class TachesController extends AppController {
             $message = $users;
         }
 
-        $pro = $this->Tache->Projet->find('all');
+        $pro = $this->filterDashboard();
         $etat = $this->Tache->Projet->find('all', array(
             'conditions' => array('etat_p' => '0')
         ));
@@ -387,26 +396,113 @@ class TachesController extends AppController {
         $this->set(compact('pro', 'etat', 'etat1', 'etat2', 'message'));
     }
 
+    public function filterDashboard() {
+        $group = $this->Auth->user('Group.name');
+        $isManager = $this->Auth->user('Poste.isManager');
+
+        if ($group === 'Admin') {
+            $etat = $this->Tache->Projet->find('all');
+        }
+        if ($group === 'DSI' && $isManager === true) {
+            $etat = $this->Tache->Projet->find('all');
+        }
+        if ($group === 'DSI' && $isManager === false) {
+            //debug($this->Auth->user());
+            $this->TachesUser->recursive = -1;
+            $projet_id_s = $this->ProjetsUser->find('list', array(
+                'conditions' => array('ProjetsUser.user_id' => $this->Auth->user('id')),
+                'fields' => array('ProjetsUser.projet_id')
+            ));
+            $etat = $this->Tache->Projet->find('all', array(
+                'conditions' => array('Projet.id' => $projet_id_s)
+            ));
+        }
+        return $etat;
+    }
+
+    /**
+     * Filter Project by State
+     */
+    public function filterDashboardByState($etat = null) {
+        $group = $this->Auth->user('Group.name');
+        $isManager = $this->Auth->user('Poste.isManager');
+
+        if ($group === 'Admin') {
+            $etat = $this->Tache->Projet->find('all', array(
+                'conditions' => array('etat_p' => $etat)
+            ));
+        }
+        if ($group === 'DSI' && $isManager === true) {
+            $etat = $this->Tache->Projet->find('all', array(
+                'conditions' => array('etat_p' => $etat)
+            ));
+        }
+        if ($group === 'DSI' && $isManager === false) {
+            //debug($this->Auth->user());
+            $this->TachesUser->recursive = -1;
+            $projet_id_s = $this->ProjetsUser->find('list', array(
+                'conditions' => array('ProjetsUser.user_id' => $this->Auth->user('id')),
+                'fields' => array('ProjetsUser.projet_id')
+            ));
+            $etat = $this->Tache->Projet->find('all', array(
+                'conditions' => array('Projet.id' => $projet_id_s,'etat_p' => $etat)
+            ));
+        }
+        return $etat;
+    }
+
+    /**
+     * Filter Do Project
+     * Ajax Way
+     */
     public function dopro() {
-        $etat = $this->Tache->Projet->find('all', array(
-            'conditions' => array('etat_p' => '0')));
+        $etat = $this->filterDashboardByState('0');
         $this->set(compact('etat'));
     }
 
+    /**
+     * Filter Doing Project
+     * Ajax Way
+     */
     public function doingpro() {
-        $etat = $this->Tache->Projet->find('all', array(
-            'conditions' => array('etat_p' => '1')));
+        $etat = $this->filterDashboardByState('1');
         $this->set(compact('etat'));
     }
 
+    /**
+     * Filter Done Project
+     * Ajax Way
+     */
     public function donepro() {
-        $etat = $this->Tache->Projet->find('all', array(
-            'conditions' => array('etat_p' => '2')));
+        $etat = $this->filterDashboardByState('2');
         $this->set(compact('etat'));
     }
 
+    /**
+     * Get All Project
+     * Ajax Way
+     */
     public function allpro() {
-        $etat = $this->Tache->Projet->find('all');
+        $group = $this->Auth->user('Group.name');
+        $isManager = $this->Auth->user('Poste.isManager');
+
+        if ($group === 'Admin') {
+            $etat = $this->Tache->Projet->find('all');
+        }
+        if ($group === 'DSI' && $isManager === true) {
+            $etat = $this->Tache->Projet->find('all');
+        }
+        if ($group === 'DSI' && $isManager === false) {
+            //debug($this->Auth->user());
+            $this->TachesUser->recursive = -1;
+            $projet_id_s = $this->ProjetsUser->find('list', array(
+                'conditions' => array('ProjetsUser.user_id' => $this->Auth->user('id')),
+                'fields' => array('ProjetsUser.projet_id')
+            ));
+            $etat = $this->Tache->Projet->find('all', array(
+                'conditions' => array('Projet.id' => $projet_id_s)
+            ));
+        }
         $this->set(compact('etat'));
     }
 

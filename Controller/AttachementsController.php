@@ -17,13 +17,11 @@ class AttachementsController extends AppController {
      */
     public $components = array('Paginator');
 
-    public function valid_attachement() {
+    public function valid_attachement($project_name = null) {
         $message = 'error';
         if ($this->request->is('ajax')) {
             $data = $this->request->data;
             $type = $data['Attachement']['FileInput']['type'];
-            echo json_encode($type);
-            die();
             switch (strtolower($type)) {
                 //allowed file types
                 case 'image/png':
@@ -36,7 +34,9 @@ class AttachementsController extends AppController {
                 case 'application/pdf':
                 case 'application/msword':
                 case 'application/vnd.ms-excel':
+                case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
                 case 'video/mp4':
+                case 'video/mp3':
                     break;
                 default:
                     echo json_encode($message);
@@ -44,15 +44,25 @@ class AttachementsController extends AppController {
             }
             $File_Name = strtolower($data['Attachement']['FileInput']['name']);
             $File_Ext = substr($File_Name, strrpos($File_Name, '.')); //get file extention
-            echo json_encode('START');
-            echo json_encode($data);
-            die();
-            if ($this->Attachement->save($data['Attachement'])) {
-                $message = 'success';
+            $dir = FILES . $project_name;
+            if (!is_dir($dir)):
+                mkdir($dir);
+            endif;
+            if (move_uploaded_file($data['Attachement']['FileInput']['tmp_name'], $dir . DS . $File_Name)) {
+                $this->Attachement->save(array(
+                    'Attachement' => array(
+                        'name' => $File_Name,
+                        'type' => $type,
+                        'user_id' => $this->Auth->user('id'),
+                        'image' => $dir . DS . $File_Name,
+                        'tache_id' => 0
+                    )
+                ));
+                echo json_encode('success');
+                die();
             }
-        }
-        echo json_encode($message);
-        die();
+            echo json_encode($message);
+            die();
 
 //        if ($this->request->is('ajax')) {
 //            //debug($this->request->data);
@@ -70,6 +80,7 @@ class AttachementsController extends AppController {
 //            $this->Attachement->saveField('attach_url', $attach['Attachement']['name']. DS . $filename);
 //            
 //        }
+        }
     }
 
 }

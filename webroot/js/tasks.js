@@ -97,11 +97,13 @@ $(document).ready(function () {
 // Add events
     $('#bodyAttach').on('change', function (event) {
         files = event.target.files;
-//        console.log(files);
-//        console.log(files[0].type);
+        console.log(files);
+        console.log($('#bodyAttach')[0].files[0].type);
+        console.log($('#bodyAttach')[0].files[0].name);
+        console.log($('#bodyAttach')[0].files[0].size);
     });
 
-// Upload Grab the files and set them to our variable
+// Grab the files and set them to our variable
 
 //    $("#attachement").on('click', function (e) {
 //        event.stopPropagation(); // Stop stuff happening
@@ -143,7 +145,7 @@ $(document).ready(function () {
 //            }
 //        });
 //    });
-    // End Upload
+
     $("#closeModal").on('click', function (e) {
         e.preventDefault();
         $("body .tour-backdrop").remove();
@@ -169,6 +171,7 @@ $(document).ready(function () {
         });
         //alert($(this).parent().text());
         var dataId = $(this).parent().data('id');
+        console.log(dataId);
         var oldName = $(this).parent().text();
         var tache_id = parseInt(sessionStorage.getItem('idTask'));
         var data = [];
