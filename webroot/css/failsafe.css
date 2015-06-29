@@ -4,7 +4,7 @@
     Author     : RAM
     Description: For plugin styling
 */
-@import "lato.css";
+@import "../css/lato.css";
 .fs-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;opacity:.6;filter:alpha(opacity=60);z-index:9999}
 .fs-container{position:fixed;width:100%;margin:60px auto;text-align:center;display:block;z-index:9999}
 .bar{width:30px;margin-left:10px;background-color:#fff;display:inline-block;vertical-align:bottom}
