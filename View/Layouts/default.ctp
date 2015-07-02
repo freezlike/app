@@ -65,7 +65,7 @@
         <!-- Load JS here for Faster site load =============================-->
         <?php echo $this->Html->script('jquery-1.11.2.min'); ?>
         <?php echo $this->Html->script('simply-toast.min'); ?>
-        <?php echo $this->Html->script('jquery-ui.min'); ?>
+        <?php echo $this->Html->script('jquery-ui-1.10.3.custom'); ?>
 
         <?php //echo $this->Html->script('jquery-migrate-1.2.1.min'); ?>
         <?php echo $this->fetch('script'); ?>
@@ -80,9 +80,9 @@
         }
         <?php echo $this->Html->scriptEnd(); ?>
         <?php echo $this->Html->script('bootstrap.min'); ?>
-        <?php echo $this->Html->script('bootstrap-typeahead'); ?>
-        <?php echo $this->Html->script('bootstrap3-typeahead'); ?>
-        <?php echo $this->Html->script('typeahead.bundle'); ?>
+        <?php //echo $this->Html->script('bootstrap-typeahead'); ?>
+        <?php //echo $this->Html->script('bootstrap3-typeahead'); ?>
+        <?php //echo $this->Html->script('typeahead.bundle'); ?>
         <?php echo $this->Html->script('select2.full', array('inline' => false)); ?>
         <?php // echo $this->Html->script('jquery-ui-1.10.3.custom'); ?>
         <?php if ($this->params['controller'] !== 'users' && $this->params['action'] !== 'login'): ?>

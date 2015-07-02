@@ -140,6 +140,9 @@ $(document).ready(function () {
                                 submit: function (e, v, m, f) {
                                     var startDate = sessionStorage.getItem('startEvent');
                                     var endDate = sessionStorage.getItem('endEvent');
+                                    console.log(startDate);
+                                    console.log(endDate);
+                                    console.log($("#datepicker2").val());
                                     var arrStart = startDate.split(' ');
                                     var sd = arrStart[0].split('/');
                                     var arrEnd = endDate.split(' ');
@@ -156,11 +159,10 @@ $(document).ready(function () {
                                             },
                                     true // make the event "stick"
                                             );
-
                                     var data = {
                                         Evenement: {
                                             name: title,
-                                            relevance : sessionStorage.getItem('relevance'),
+                                            relevance: sessionStorage.getItem('relevance'),
                                             date_debut: s,
                                             date_fin: e,
                                             user_id: sessionStorage.getItem('user_id'),
@@ -172,29 +174,31 @@ $(document).ready(function () {
                                         url: appUrl(root) + 'evenements/add_event',
                                         type: 'POST',
                                         data: data,
-//                                    success: function () {
-//                                        
-//                                    }
+                                        success: function () {
+                                            $.simplyToast("Evenement Ajouté avec succès","success");
+                                        }
                                     });
                                     console.log(data);
                                 }
                             });
                             $('#datepicker2').datetimepicker({
                                 onSelect: function (dateText, inst) {
+                                    console.log('done2');
                                     sessionStorage.setItem('endEvent', dateText);
                                 }
                             });
                             $.prompt(date_debut);
                             $('#datepicker1').datetimepicker({
                                 onSelect: function (dateText, inst) {
+                                    console.log('done1');
                                     sessionStorage.setItem('startEvent', dateText);
                                 }
                             });
                             $.prompt("Importance : <br>\n\
                             <input type='radio' name='choice' id='choice' value='bg-danger'>Important<br>\n\
-                            <input type='radio' name='choice' id='choice' value='bg-info'>Normal",{
-                                submit : function(e,v,m,f){
-                                    sessionStorage.setItem('relevance',$("body #choice:checked").val());
+                            <input type='radio' name='choice' id='choice' value='bg-info'>Normal", {
+                                submit: function (e, v, m, f) {
+                                    sessionStorage.setItem('relevance', $("body #choice:checked").val());
                                 }
                             });
                             var title = null;

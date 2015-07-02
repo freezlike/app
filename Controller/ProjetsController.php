@@ -135,7 +135,6 @@ class ProjetsController extends AppController {
         endforeach;
 
         $this->set(compact('users'));
-        
     }
 
     public function edit_e($id = null) {

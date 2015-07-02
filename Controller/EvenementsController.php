@@ -54,12 +54,26 @@ class EvenementsController extends AppController {
         echo json_encode(array('text' => __("Evenement Non ajouté"), 'status' => 404, 'type' => 'error'));
         die();
     }
-
+    public function search(){
+        
+        if($this->request->is('post')){
+            debug($this->request->data);
+            die();
+        }
+        //$this->redirect($this->referer());
+    }
     public function events() {
         if ($this->request->is('ajax')):
-            $events = $this->Evenement->find('all', array(
-                'order' => array('Evenement.created')
-            ));
+            if ($this->Auth->user('Group.name') === 'Admin') {
+                $events = $this->Evenement->find('all', array(
+                    'order' => array('Evenement.created')
+                ));
+            } else {
+                $events = $this->Evenement->find('all', array(
+                    'conditions' => array('Evenement.group_id' => $this->Auth->user('Group.id')),
+                    'order' => array('Evenement.created')
+                ));
+            }
             header('HTTP/1.0 200 OK');
             echo json_encode($events);
             die();

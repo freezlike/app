@@ -86,25 +86,28 @@ class UsersController extends AppController {
         $group->id = 1;
         $this->Acl->allow($group, 'controllers');
 
-        // Autorise l'accès aux posts et widgets pour les managers
+        // Config Groupe 2 (RH)
         $group->id = 2;
         $this->Acl->deny($group, 'controllers');
         $this->Acl->allow($group, 'controllers/Pages/home');
         $this->Acl->allow($group, 'controllers/Users');
         $this->Acl->allow($group, 'controllers/Payments');
         $this->Acl->allow($group, 'controllers/Evenements');
+        $this->Acl->deny($group, 'controllers/Evenements/search');
         $this->Acl->allow($group, 'controllers/Group');
-        // Autorise l'accès aux actions add et edit des posts widgets pour les utilisateurs de ce groupe
+        // Config Group 3 (DSI)
         $group->id = 3;
         $this->Acl->deny($group, 'controllers');
         $this->Acl->allow($group, 'controllers/Pages/home');
         $this->Acl->allow($group, 'controllers/Projets');
+        $this->Acl->deny($group, 'controllers/Projets/edit');
         $this->Acl->allow($group, 'controllers/Evenements');
         $this->Acl->allow($group, 'controllers/Taches');
         // Permet aux utilisateurs classiques de se déconnecter
         $this->Acl->allow($group, 'controllers/users/logout');
 
         // Nous ajoutons un exit pour éviter d'avoir un message d'erreur affreux "missing views" (manque une vue)
+        echo "<meta charset='utf-8' />";
         echo "ACL Users mis à jour";
         exit;
     }

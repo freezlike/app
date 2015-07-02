@@ -144,6 +144,13 @@ class TachesController extends AppController {
     }
 
     public function projet_etat($id = null) {
+        $ifProject = $this->ProjetsUser->find('first',array(
+            'conditions'=>array('ProjetsUser.user_id'=>$this->Auth->user('id'),'ProjetsUser.projet_id'=>$id)
+        ));
+        if(empty($ifProject)){
+            $this->Session->setFlash(__("Vous n'êtes pas autorisé à faire ça"),'alert',array('type'=>'error'));
+            $this->redirect($this->referer());
+        }
         $tache1 = $this->Tache->find('count', array(
             'conditions' => array('etat' => '0', 'projet_id' => $id)
         ));

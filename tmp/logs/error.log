@@ -1,0 +1,285 @@
+2015-06-29 19:13:59 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'TachesUser.projet_id' in 'where clause'
+Request URL: /largestrh/taches/projet_etat/1
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\wampNew\www\largestrh\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `TachesU...', Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('SELECT `TachesU...', Array, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Model\Datasource\DboSource.php(1106): DboSource->fetchAll('SELECT `TachesU...', false)
+#4 C:\wampNew\www\largestrh\lib\Cake\Model\Model.php(2947): DboSource->read(Object(TachesUser), Array)
+#5 C:\wampNew\www\largestrh\lib\Cake\Model\Model.php(2919): Model->_readDataSource('first', Array)
+#6 C:\wampNew\www\largestrh\app\Controller\TachesController.php(149): Model->find('first', Array)
+#7 [internal function]: TachesController->projet_etat('1')
+#8 C:\wampNew\www\largestrh\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(TachesController), Array)
+#9 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(TachesController), Object(CakeRequest))
+#11 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-06-29 19:16:37 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 19:17:10 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:24:58 Error: [MissingControllerException] Controller class EventsController could not be found.
+Exception Attributes: array (
+  'class' => 'EventsController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/events/search
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:26:11 Error: [MissingControllerException] Controller class EventsController could not be found.
+Exception Attributes: array (
+  'class' => 'EventsController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/events/search
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:27:16 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:27:57 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:28:06 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:28:25 Error: Fatal Error (1): Maximum function nesting level of '250' reached, aborting! in [C:\wampNew\www\largestrh\lib\Cake\Model\Datasource\DboSource.php, line 801]
+2015-06-29 20:28:25 Error: [FatalErrorException] Maximum function nesting level of '250' reached, aborting!
+Request URL: /largestrh/evenements/events
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Maximum functio...', 'C:\\wampNew\\www\\...', 801)
+#1 [internal function]: ErrorHandler::handleError(1, 'Maximum functio...', 'C:\\wampNew\\www\\...', 801, Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Maximum functio...', 'C:\\wampNew\\www\\...', 801, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-29 20:29:02 Error: [MissingActionException] Action EvenementsController::seach() could not be found.
+Exception Attributes: array (
+  'controller' => 'EvenementsController',
+  'action' => 'seach',
+)
+Request URL: /largestrh/evenements/seach
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(EvenementsController), Object(CakeRequest))
+#2 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-29 20:29:05 Error: [MissingActionException] Action EvenementsController::seach() could not be found.
+Exception Attributes: array (
+  'controller' => 'EvenementsController',
+  'action' => 'seach',
+)
+Request URL: /largestrh/evenements/seach
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(EvenementsController), Object(CakeRequest))
+#2 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-29 20:29:08 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:29:23 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:29:32 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:29:50 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:30:06 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:30:19 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:30:26 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 20:31:26 Error: [MissingViewException] View file "C:\wampNew\www\largestrh\app\View\Evenements\search.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wampNew\\www\\largestrh\\app\\View\\Evenements\\search.ctp',
+)
+Request URL: /largestrh/evenements/search
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wampNew\www\largestrh\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(EvenementsController), Object(CakeRequest))
+#4 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-06-30 02:46:50 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 12:53:32 Error: [MissingControllerException] Controller class Install.phpController could not be found.
+Exception Attributes: array (
+  'class' => 'Install.phpController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/install.php
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:56:52 Error: Fatal Error (1): Class 'DATABASE_CONFIG' not found in [C:\wampNew\www\largestrh\app\webroot\init.php, line 18]
+2015-06-30 15:56:52 Error: [FatalErrorException] Class 'DATABASE_CONFIG' not found
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'DATABASE...', 'C:\\wampNew\\www\\...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'DATABASE...', 'C:\\wampNew\\www\\...', 18, Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'DATABASE...', 'C:\\wampNew\\www\\...', 18, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-30 15:58:09 Error: Fatal Error (1): Class 'DATABASE_CONFIG' not found in [C:\wampNew\www\largestrh\app\webroot\init.php, line 19]
+2015-06-30 15:58:09 Error: [FatalErrorException] Class 'DATABASE_CONFIG' not found
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'DATABASE...', 'C:\\wampNew\\www\\...', 19)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'DATABASE...', 'C:\\wampNew\\www\\...', 19, Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'DATABASE...', 'C:\\wampNew\\www\\...', 19, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-30 15:58:22 Error: Fatal Error (1): Class 'DATABASE_CONFIG' not found in [C:\wampNew\www\largestrh\app\webroot\init.php, line 19]
+2015-06-30 15:58:22 Error: [FatalErrorException] Class 'DATABASE_CONFIG' not found
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'DATABASE...', 'C:\\wampNew\\www\\...', 19)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'DATABASE...', 'C:\\wampNew\\www\\...', 19, Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'DATABASE...', 'C:\\wampNew\\www\\...', 19, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-30 15:59:07 Error: Fatal Error (64): require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required 'C:\wampNew\www\largestrh\app\Config' (include_path='C:\wampNew\www\largestrh\lib;.;C:\php\pear') in [C:\wampNew\www\largestrh\app\webroot\init.php, line 17]
+2015-06-30 15:59:07 Error: [FatalErrorException] require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required 'C:\wampNew\www\largestrh\app\Config' (include_path='C:\wampNew\www\largestrh\lib;.;C:\php\pear')
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'require_once() ...', 'C:\\wampNew\\www\\...', 17)
+#1 [internal function]: ErrorHandler::handleError(64, 'require_once() ...', 'C:\\wampNew\\www\\...', 17, Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'require_once() ...', 'C:\\wampNew\\www\\...', 17, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-30 15:59:15 Error: Fatal Error (64): require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required 'C:\wampNew\www\largestrh\app\Config' (include_path='C:\wampNew\www\largestrh\lib;.;C:\php\pear') in [C:\wampNew\www\largestrh\app\webroot\init.php, line 17]
+2015-06-30 15:59:15 Error: [FatalErrorException] require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required 'C:\wampNew\www\largestrh\app\Config' (include_path='C:\wampNew\www\largestrh\lib;.;C:\php\pear')
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(64, 'require_once() ...', 'C:\\wampNew\\www\\...', 17)
+#1 [internal function]: ErrorHandler::handleError(64, 'require_once() ...', 'C:\\wampNew\\www\\...', 17, Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'require_once() ...', 'C:\\wampNew\\www\\...', 17, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-02 04:57:35 Error: Fatal Error (1): Call to a member function header() on a non-object in [C:\wampNew\www\largestrh\lib\Cake\Controller\Controller.php, line 774]
+2015-07-02 04:57:35 Error: [FatalErrorException] Call to a member function header() on a non-object
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774, Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-02 04:58:18 Error: Fatal Error (1): Call to a member function header() on a non-object in [C:\wampNew\www\largestrh\lib\Cake\Controller\Controller.php, line 774]
+2015-07-02 04:58:18 Error: [FatalErrorException] Call to a member function header() on a non-object
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774, Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-02 04:58:27 Error: Fatal Error (1): Call to a member function header() on a non-object in [C:\wampNew\www\largestrh\lib\Cake\Controller\Controller.php, line 774]
+2015-07-02 04:58:27 Error: [FatalErrorException] Call to a member function header() on a non-object
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774, Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-02 04:58:34 Error: Fatal Error (1): Call to a member function header() on a non-object in [C:\wampNew\www\largestrh\lib\Cake\Controller\Controller.php, line 774]
+2015-07-02 04:58:34 Error: [FatalErrorException] Call to a member function header() on a non-object
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774, Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 774, Array)
+#3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
