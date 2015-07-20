@@ -1,7 +1,7 @@
 <?php echo $this->Html->css('login', array('inline' => FALSE)); ?>
 <div class="row animated fadeILeftBig">
     <div class="login-holder col-md-6 col-md-offset-3">
-        <h2 class="page-header text-center text-primary"> Largestinfo RH </h2>
+        <h2 class="page-header text-center text-primary"> Largestinfo ERP </h2>
         <?php
         echo $this->Form->create('User', array(
             'inputDefaults' => array('label' => false, 'div' => false)

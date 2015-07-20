@@ -292,3 +292,29 @@ Stack Trace:
 #3 C:\wampNew\www\largestrh\lib\Cake\Core\App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2015-07-13 03:43:31 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'aze\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /largestrh/users/login
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\wampNew\www\largestrh\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\wampNew\www\largestrh\lib\Cake\Model\Model.php(3524): ConnectionManager::getDataSource('default')
+#3 C:\wampNew\www\largestrh\lib\Cake\Model\Model.php(1136): Model->setDataSource('default')
+#4 C:\wampNew\www\largestrh\lib\Cake\Model\Model.php(3551): Model->setSource('users')
+#5 C:\wampNew\www\largestrh\lib\Cake\Model\Model.php(2947): Model->getDataSource()
+#6 C:\wampNew\www\largestrh\lib\Cake\Model\Model.php(2919): Model->_readDataSource('first', Array)
+#7 C:\wampNew\www\largestrh\lib\Cake\Controller\Component\Auth\BaseAuthenticate.php(112): Model->find('first', Array)
+#8 C:\wampNew\www\largestrh\lib\Cake\Controller\Component\Auth\FormAuthenticate.php(79): BaseAuthenticate->_findUser('Nesrine', 'nesrine')
+#9 C:\wampNew\www\largestrh\lib\Cake\Controller\Component\AuthComponent.php(754): FormAuthenticate->authenticate(Object(CakeRequest), Object(CakeResponse))
+#10 C:\wampNew\www\largestrh\lib\Cake\Controller\Component\AuthComponent.php(601): AuthComponent->identify(Object(CakeRequest), Object(CakeResponse))
+#11 C:\wampNew\www\largestrh\app\Controller\UsersController.php(273): AuthComponent->login()
+#12 [internal function]: UsersController->login()
+#13 C:\wampNew\www\largestrh\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#14 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#15 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#16 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#17 {main}

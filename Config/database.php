@@ -6,9 +6,9 @@ class DATABASE_CONFIG {
         "datasource" => "Database/Mysql",
         "persistent" => true,
         "host" => "localhost",
-        "login" => "aze",
-        "password" => "aze",
-        "database" => "db",
+        "login" => "root",
+        "password" => "",
+        "database" => "rhbase1",
         "prefix" => "",
         "encoding" => "utf8",
     );
