@@ -74,7 +74,7 @@
         </div>
     </div>
 </div>
- <?php echo $this->Form->end(); ?>
+<?php echo $this->Form->end(); ?>
 <?php echo $this->Html->script('xhr'); ?>
 <?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 var i = 0;

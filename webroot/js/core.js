@@ -210,7 +210,8 @@ function displayResult(item, val, text) {
     window.location.replace(val);
 }
 
-
+/*
+ * 
 $('.nav-input-search').typeahead({
     source: [
         {id: 'index.html', name: 'Dashboard'},
@@ -300,3 +301,5 @@ $('.nav-input-search').typeahead({
     ],
     itemSelected: displayResult
 });
+ * 
+ */

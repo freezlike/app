@@ -58,8 +58,8 @@
             <li>
                 <a class="dropdown" href="#" onclick="return false;" data-original-title="Pages"><i class="fa fa-shopping-cart"></i><span class="hidden-minibar">  <?php echo __("Gestion Produits"); ?></a>
                 <ul>  
-                    <li><a href="<?php echo $this->Html->url(array('controller' => 'designations', 'action' => 'admin_edit')); ?>" data-original-title="Ajout Produit"><i class="fa fa-suitcase"></i><span class="hidden-minibar"> <?php echo __("Ajout Produit"); ?></span></a></li>
-                    <li><a href="<?php echo $this->Html->url(array('controller' => 'designations', 'action' => 'admin_index')); ?>" data-original-title="Suivi des Produits"><i class="fa fa-list-alt"></i><span class="hidden-minibar"> <?php echo __("Suivi des Produits"); ?></span></a></li>
+                    <li><a href="<?php echo $this->Html->url(array('controller' => 'designations', 'action' => 'edit')); ?>" data-original-title="Ajout Produit"><i class="fa fa-suitcase"></i><span class="hidden-minibar"> <?php echo __("Ajout Produit"); ?></span></a></li>
+                    <li><a href="<?php echo $this->Html->url(array('controller' => 'designations', 'action' => 'index')); ?>" data-original-title="Suivi des Produits"><i class="fa fa-list-alt"></i><span class="hidden-minibar"> <?php echo __("Suivi des Produits"); ?></span></a></li>
                    
                 </ul>
             </li>

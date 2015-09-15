@@ -318,3 +318,242 @@ Stack Trace:
 #15 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #16 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #17 {main}
+2015-09-12 12:19:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/css/images/sort_desc.png
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-12 12:19:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/css/images/sort_both.png
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-12 12:22:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/css/images/sort_both.png
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-12 12:22:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/css/images/sort_desc.png
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-12 12:22:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/css/images/sort_both.png
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-12 12:22:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/css/images/sort_desc.png
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:34:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/css/demo_page.css
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:34:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/js/jquery.dataTables.js
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:34:10 Error: [MissingActionException] Action DesignationsController::edit() could not be found.
+Exception Attributes: array (
+  'controller' => 'DesignationsController',
+  'action' => 'edit',
+)
+Request URL: /largestrh/designations/edit/1/admin:1
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(DesignationsController), Object(CakeRequest))
+#2 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-09-15 16:34:21 Error: [MissingActionException] Action DesignationsController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'DesignationsController',
+  'action' => 'index',
+)
+Request URL: /largestrh/designations/index
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(DesignationsController), Object(CakeRequest))
+#2 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-09-15 16:34:28 Error: [MissingActionException] Action DesignationsController::edit() could not be found.
+Exception Attributes: array (
+  'controller' => 'DesignationsController',
+  'action' => 'edit',
+)
+Request URL: /largestrh/designations/edit/1/admin:1
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(DesignationsController), Object(CakeRequest))
+#2 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-09-15 16:34:48 Error: [MissingControllerException] Controller class CommercialesController could not be found.
+Exception Attributes: array (
+  'class' => 'CommercialesController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/commerciales/admin_index
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:34:53 Error: [MissingControllerException] Controller class ProduitsController could not be found.
+Exception Attributes: array (
+  'class' => 'ProduitsController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/produits/admin_index
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:35:01 Error: [MissingActionException] Action DesignationsController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'DesignationsController',
+  'action' => 'index',
+)
+Request URL: /largestrh/designations/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(DesignationsController), Object(CakeRequest))
+#2 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-09-15 16:36:11 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:36:25 Error: [MissingActionException] Action DesignationsController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'DesignationsController',
+  'action' => 'admin_index',
+)
+Request URL: /largestrh/designations/admin_index
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(DesignationsController), Object(CakeRequest))
+#2 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-09-15 16:36:30 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:36:35 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:36:46 Error: [MissingActionException] Action DesignationsController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'DesignationsController',
+  'action' => 'admin_index',
+)
+Request URL: /largestrh/designations/admin_index
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(DesignationsController), Object(CakeRequest))
+#2 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-09-15 16:36:50 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:37:36 Error: [MissingActionException] Action DesignationsController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'DesignationsController',
+  'action' => 'admin_index',
+)
+Request URL: /largestrh/designations/admin_index
+Stack Trace:
+#0 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wampNew\www\largestrh\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(DesignationsController), Object(CakeRequest))
+#2 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-09-15 16:37:39 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:38:24 Error: [MissingControllerException] Controller class LargestrhController could not be found.
+Exception Attributes: array (
+  'class' => 'LargestrhController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/largestrh/
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:39:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/css/demo_page.css
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-09-15 16:39:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /largestrh/js/jquery.dataTables.js
+Stack Trace:
+#0 C:\wampNew\www\largestrh\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

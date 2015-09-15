@@ -10,14 +10,14 @@ class DesignationsController extends AppController {
         parent::beforeFilter();
     }
 
-    public function admin_index() {
+    public function index() {
         $this->set('produits', $this->Designation->find('all'));
     }
 
     /**
      * Add / Edit Product under Admin
      */
-    public function admin_edit($id = null) {
+    public function edit($id = null) {
         $this->Designation->recursive = 0;
         if ($id !== null) {
             $this->Designation->id = $id;
@@ -38,7 +38,7 @@ class DesignationsController extends AppController {
         }
     }
 
-    public function admin_delete($id = null) {
+    public function delete($id = null) {
         if ($id !== null) {
             
         } else {
